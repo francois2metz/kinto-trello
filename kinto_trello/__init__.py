@@ -1,8 +1,9 @@
-from kinto.core import load_default_settings
-
 DEFAULT_SETTINGS = {
     'trello.apikey': None
 }
 
 def includeme(config):
-    load_default_settings(config, DEFAULT_SETTINGS)
+    settings = config.get_settings()
+
+    defaults = {k: v for k, v in DEFAULT_SETTINGS.items() if k not in settings}
+    config.add_settings(defaults)
