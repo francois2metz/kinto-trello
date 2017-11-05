@@ -31,7 +31,7 @@ setup(
     # What does your project relate to?
     keywords='kinto trello',
 
-    py_modules=["kinto_trello"],
+    packages=find_packages(),
 
     install_requires=[],
 )
