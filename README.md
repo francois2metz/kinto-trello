@@ -9,7 +9,7 @@ This project implement an authentication policy for [Kinto][] using [Trello][] t
 
     pip install kinto-trello
 
-## Usage
+## Configuration
 
 Update `kinto.includes` to add kinto_trello
 
@@ -20,6 +20,13 @@ Add to your config file:
     multiauth.policies = trello
     multiauth.policy.trello.use = kinto_trello.authentication.TrelloAuthenticationPolicy
     trello.apikey = 'YOUR_API_KEY' # FROM https://trello.com/app-key
+
+## Usage
+
+In the `Authorization` header, set the trello token:
+
+
+    Authorization: Trello <token>
 
 ## License
 
